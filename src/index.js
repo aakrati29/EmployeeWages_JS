@@ -22,6 +22,7 @@ let dailyWages = [];
 let dailyRecords = []; 
 let dailyWageMap = new Map();
 let dailyHourMap = new Map();
+let empDailyData = [];
 
 while (totalDays < MAX_WORKING_DAYS && totalHours < MAX_WORKING_HOURS) {
     let workType = Math.floor(Math.random() * 3); 
@@ -36,8 +37,17 @@ while (totalDays < MAX_WORKING_DAYS && totalHours < MAX_WORKING_HOURS) {
     totalDays++;
 
     dailyWageMap.set(totalDays, dailyWage);
-    dailyHourMap.set(totalDays, workHours);
+    dailyHourMap.set(totalDays, workHours); 
+
+    empDailyData.push({
+        day: totalDays,
+        hoursWorked: workHours,
+        wageEarned: dailyWage
+    });
 }
+
+console.log("Employee Work Data:", empDailyData);
+
 
 let totalWage = Array.from(dailyWageMap.values()).reduce((sum, wage) => sum + wage, 0);
 const totalWorkedHours = Array.from(dailyHourMap.values()).reduce((sum, hours) => sum + hours, 0);
