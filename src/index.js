@@ -24,7 +24,6 @@ let dailyWageMap = new Map();
 let dailyHourMap = new Map();
 let empDailyData = [];
 
-
 while (totalDays < MAX_WORKING_DAYS && totalHours < MAX_WORKING_HOURS) {
     let workType = Math.floor(Math.random() * 3); 
     let workHours = getWorkHours(workType);
@@ -54,7 +53,6 @@ const totalWage = empDailyData.reduce((sum, record) => sum + record.wageEarned, 
 const totalWorkedHours = empDailyData.reduce((sum, record) => sum + record.hoursWorked, 0);
 console.log(`Total Wage: $${totalWage}, Total Hours Worked: ${totalWorkedHours} hrs`);
 
-
 console.log("Full Working Days:");
 empDailyData.forEach(record => {
     if (record.hoursWorked === FULL_TIME_HOURS) {
@@ -72,7 +70,6 @@ const noWorkDays = empDailyData
     .filter(record => record.hoursWorked === 0)
     .map(record => `Day ${record.day}`);
 console.log("No Working Days:", noWorkDays);
-
 
 let fullTimeDays = dailyRecords.filter(record => record.wage === FULL_TIME_WAGE);
 console.log("Days with Full-Time Wage:", fullTimeDays.map(record => `Day ${record.day}`));
