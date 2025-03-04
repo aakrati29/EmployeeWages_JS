@@ -6,7 +6,7 @@ class EmployeePayRoll {
         this.setStartDate(startDate);
         this.setName(name);
     }
-   
+
     setId(id) {
         try {
             if (id <= 0 || isNaN(id)) {
@@ -73,9 +73,9 @@ class EmployeePayRoll {
 
 // Example Usage
 const emp1 = new EmployeePayRoll(101, "Aakrati", 5000, "F", "2023-05-10");  
-const emp2 = new EmployeePayRoll(-5, "Ankit", 7000, "F", "2022-11-15"); 
-const emp3 = new EmployeePayRoll(103, "Avinash", -3000, "M", "2024-01-20"); 
-const emp4 = new EmployeePayRoll(104, "Anand", 6000, "X", "2023-06-01"); 
+const emp2 = new EmployeePayRoll(-5, "Ankit", 7000, "M", "2022-11-15"); 
+const emp3 = new EmployeePayRoll(103, "Anand", -3000, "M", "2024-01-20"); 
+const emp4 = new EmployeePayRoll(104, "Avinash", 6000, "M", "2023-06-01"); 
 
 
 console.log(emp1.getDetails());
