@@ -53,12 +53,14 @@ const totalWage = empDailyData.reduce((sum, record) => sum + record.wageEarned, 
 const totalWorkedHours = empDailyData.reduce((sum, record) => sum + record.hoursWorked, 0);
 console.log(`Total Wage: $${totalWage}, Total Hours Worked: ${totalWorkedHours} hrs`);
 
+
 console.log("Full Working Days:");
 empDailyData.forEach(record => {
     if (record.hoursWorked === FULL_TIME_HOURS) {
         console.log(`Day ${record.day}`);
     }
 });
+
 
 const partWorkDays = empDailyData
     .filter(record => record.hoursWorked === PART_TIME_HOURS)
