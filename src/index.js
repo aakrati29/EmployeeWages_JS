@@ -24,7 +24,6 @@ let dailyWageMap = new Map();
 let dailyHourMap = new Map();
 let empDailyData = [];
 
-
 while (totalDays < MAX_WORKING_DAYS && totalHours < MAX_WORKING_HOURS) {
     let workType = Math.floor(Math.random() * 3); 
     let workHours = getWorkHours(workType);
